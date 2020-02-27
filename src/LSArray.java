@@ -27,10 +27,12 @@ public class LSArray{
         sc.close();
 
 
+
     }
 
     public int fileLen(String FileName) throws IOException{
         int fileLeng = 0;
+        File file = new File(FileName);
         
 
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -41,8 +43,6 @@ public class LSArray{
         return fileLeng;
     }
 
-
-
     public  void printAreas(String stage, String day, String startTime){
         String check = new String (stage + "_"+day+"_"+startTime);
         String found = new String ("No Zone found for: ");
@@ -52,7 +52,7 @@ public class LSArray{
 
         len = this.fileLength;
         for (int i=0;i<len;i++){
-            DiscreteCount ++;
+            DiscreteCount ++; //instrumentation
             if (this.data[i].contains(check)){
 
 
@@ -75,4 +75,17 @@ public class LSArray{
             System.out.println(this.data[i]);
         }
     }
+
+    public int getFileLength(){
+        return this.fileLength;
+    }
+
+    public String[] getData(){
+        return this.data;
+    }
+
+    public File getFile(){
+        return this.file;
+    }
+
 }

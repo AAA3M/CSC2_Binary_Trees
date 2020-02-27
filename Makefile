@@ -6,12 +6,18 @@ BINDIR=bin
 $(BINDIR)/%.class:$(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
 
-CLASSES=LSArrayApp.class
+CLASSES=LSArrayApp.class LSArray.class \
+		BinaryTreeNode.class BinaryTree.class \
+        BTQueueNode.class BTQueue.class \
+        BinarySearchTree.class BinarySearchTreeTest.class \
+		BTree.class LSBSTApp.class LSData.class
+
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 default: $(CLASS_FILES)
 clean:
 	rm $(BINDIR)/*.class
-run:
-	java -cp bin LSArrayApp
-run2:
+runB:
+	java -cp bin LSBSTAPP
+
+runL:
 	java -cp bin LSArrayApp
