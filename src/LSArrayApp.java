@@ -7,13 +7,14 @@ public class LSArrayApp{
 
     public static void main(String args[]) throws IOException, FileNotFoundException
     {
+        String path = "/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/DataFiles/";
              
         if (args.length == 1){
-            LSArray arr = new LSArray("/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/" + args[0]);
+            LSArray arr = new LSArray(path + args[0]);
             arr.printAllAreas();
         }
         if (args.length == 4){
-            LSArray arr = new LSArray("/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/" + args[3]);
+            LSArray arr = new LSArray(path + args[3]);
             arr.printAreas(args[0], args[1], args[2]);
         }
 

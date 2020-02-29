@@ -32,10 +32,9 @@ public class LSArray{
 
     public int fileLen(String FileName) throws IOException{
         int fileLeng = 0;
-        File file = new File(FileName);
         
 
-        BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(this.file));
         while (br.readLine() != null) {
             fileLeng ++;
         }
@@ -57,14 +56,20 @@ public class LSArray{
 
 
 
-                found = "Zone(s) found: \n";
+                found = "Zone(s) found:";
                 check = this.data[i];
                 break;
             }
         }
         System.out.println(found);
         System.out.println(check);
-        System.out.println("Number of comparisons used: " + DiscreteCount);
+        System.out.println("Number of comparisons to insert:");
+        System.out.println("0");
+        System.out.println("Number of comparisons to find:");
+        String Disc = "";
+        Disc = Disc + DiscreteCount;
+        System.out.print(Disc);
+
 
     }
 

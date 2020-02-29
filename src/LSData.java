@@ -13,24 +13,12 @@ public class LSData implements Comparable<LSData>{
 
     public LSData(String FileLine) {
         this.fileLine = FileLine;
-        char space = ' ';
-        int linelength = FileLine.length();
 
-        for (int i =0; i<linelength; i++){
-            if (FileLine.charAt(i) == space){
-                this.Skey = FileLine.substring(0, i);
-                this.zones = FileLine.substring(i+1, linelength);
-                break;
-            }
-            
-        }
-        String temp = "";
-        for (int i = 0; i < Skey.length(); i++){
-            if (Skey.charAt(i) != '_'){
-                temp = temp + Skey.charAt(i);
-            }
-        }
-        this.key = Integer.parseInt(temp);
+        String[] arrOfStr = fileLine.split(" ", 2);
+        this.Skey= arrOfStr[0];
+        this.zones = arrOfStr[1];
+        arrOfStr = Skey.split("_", 3);
+        this.key = Integer.parseInt(arrOfStr[0]+arrOfStr[1]+arrOfStr[2]);
     }
 
     public int compareTo(LSData other){
@@ -60,17 +48,5 @@ public class LSData implements Comparable<LSData>{
 
     public int getKey(){
         return this.key;
-    }
-
-    // methods to prints all areas and print areas
-
-    
-
-    public void printAllAreas(File file){
-
-    }
-
-    public void printAreas(File file){
-
     }
 }

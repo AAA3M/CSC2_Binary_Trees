@@ -5,6 +5,7 @@
 public class BinarySearchTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
    public int DiscreteCounter = 0;
+   public int DiscreteCounterInsert = 0;
    public void insert ( dataType d )
    {
       if (root == null)
@@ -14,37 +15,41 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    }
    public void insert ( dataType d, BinaryTreeNode<dataType> node )
    {
+      DiscreteCounterInsert ++;
       if (d.compareTo (node.data) <= 0)
       {
-         if (node.left == null)
+         if (node.left == null) 
             node.left = new BinaryTreeNode<dataType> (d, null, null);
          else
             insert (d, node.left);
       }
       else
       {
-         if (node.right == null)
-            node.right = new BinaryTreeNode<dataType> (d, null, null);
-         else
-            insert (d, node.right);
+         if (node.right == null){
+
+            node.right = new BinaryTreeNode<dataType> (d, null, null);}
+         else{
+            insert (d, node.right);}
       }
    }
    
    public BinaryTreeNode<dataType> find ( dataType d )
    {
-      DiscreteCounter ++;
-      if (root == null)
+      if (root == null) //Don't incriment as we are checking for null 
          return null;
       else
          return find (d, root);
    }
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
+      DiscreteCounter ++;
       if (d.compareTo (node.data) == 0) {
-         DiscreteCounter ++;
+         
          return node;}
+         
       else if (d.compareTo (node.data) < 0){
-         DiscreteCounter++;
+         DiscreteCounter ++;
+
          return (node.left == null) ? null : find (d, node.left);}
 
       else{
