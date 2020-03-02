@@ -1,6 +1,11 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+/**
+ * App which excecutes the printAreas and printAllAreas methods of the LSData object using a Binary Search Tree.
+ * It follows user arguments to determine the textfile and the key
+ * 
+ * @author Alaric McGregor
+ */
 public class LSBSTApp{
     public static void main(String args[])throws IOException, FileNotFoundException
     {

@@ -1,36 +1,21 @@
-
 /**
- *  The {@code BTree} class represents an ordered symbol table of generic
- *  key-value pairs.
- *  It supports the <em>put</em>, <em>get</em>, <em>contains</em>,
- *  <em>size</em>, and <em>is-empty</em> methods.
- *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
- *  the convention is to replace the old value with the new value.
- *  Unlike {@link java.util.Map}, this class uses the convention that
- *  values cannot be {@code null}—setting the
- *  value associated with a key to {@code null} is equivalent to deleting the key
- *  from the symbol table.
- *  <p>
- *  This implementation uses a B-tree. It requires that
- *  the key type implements the {@code Comparable} interface and calls the
- *  {@code compareTo()} and method to compare two keys. It does not call either
- *  {@code equals()} or {@code hashCode()}.
- *  The <em>get</em>, <em>put</em>, and <em>contains</em> operations
- *  each make log<sub><em>m</em></sub>(<em>n</em>) probes in the worst case,
- *  where <em>n</em> is the number of key-value pairs
- *  and <em>m</em> is the branching factor.
- *  The <em>size</em>, and <em>is-empty</em> operations take constant time.
- *  Construction takes constant time.
- *  <p>
- *  For additional documentation, see
- *  <a href="https://algs4.cs.princeton.edu/62btree">Section 6.2</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ * A B-Tree is a special type of Binary Tree which has only 2 levels, level 1 contains roots(more than one potentially)
+ * and level 2 contains only leaves(many)
+ * 
+ * @author Original Robert Sedgewick and Kevin Wayne. | Edited to fit assignment criterion and implemented by Alaric McGregor
+ * @param <Key> The Key is a type which must extend comparible, and is used to search for a value in the BTree
+ * @param <Value> Value is the value of the node and is the data contained in the BTree's node.
  */
+
+
+
 public class BTree<Key extends Comparable<Key>, Value>  {
     // max children per B-tree node = M-1
     // (must be even and greater than 2)
     private static final int M = 4;
+    public int DiscreteCounterS = 0;
+    public int DiscreteCounterI = 0;
+
 
     private Node root;       // root of the B-tree
     private int height;      // height of the B-tree
@@ -110,8 +95,10 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         Entry[] children = x.children;
 
         // external node
+        DiscreteCounterS++;
         if (ht == 0) {
             for (int j = 0; j < x.m; j++) {
+                DiscreteCounterS++;
                 if (eq(key, children[j].key)) return (Value) children[j].val;
             }
         }
@@ -119,8 +106,14 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         // internal node
         else {
             for (int j = 0; j < x.m; j++) {
-                if (j+1 == x.m || less(key, children[j+1].key))
+                if (j+1 == x.m ){
+                    DiscreteCounterS++;
                     return search(children[j].next, key, ht-1);
+                }
+                if (less(key, children[j+1].key)){
+                    DiscreteCounterS++;
+                    return search(children[j].next, key, ht-1);
+                }
             }
         }
         return null;
@@ -155,8 +148,10 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         Entry t = new Entry(key, val, null);
 
         // external node
+        DiscreteCounterI++;
         if (ht == 0) {
             for (j = 0; j < h.m; j++) {
+                DiscreteCounterI++;
                 if (less(key, h.children[j].key)) break;
             }
         }
@@ -164,13 +159,28 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         // internal node
         else {
             for (j = 0; j < h.m; j++) {
-                if ((j+1 == h.m) || less(key, h.children[j+1].key)) {
+                if (j+1 == h.m) {
+                    DiscreteCounterI++;
+
+                    
                     Node u = insert(h.children[j++].next, key, val, ht-1);
                     if (u == null) return null;
                     t.key = u.children[0].key;
                     t.next = u;
                     break;
+                
                 }
+
+                if (less(key, h.children[j+1].key)){
+                    DiscreteCounterI++;
+                    Node u = insert(h.children[j++].next, key, val, ht-1);
+                    if (u == null) return null;
+                    t.key = u.children[0].key;
+                    t.next = u;
+                    break;
+
+                }
+
             }
         }
 
@@ -237,6 +247,9 @@ public class BTree<Key extends Comparable<Key>, Value>  {
 
 }
 
+
+
+
 /******************************************************************************
  *  Copyright 2002-2020, Robert Sedgewick and Kevin Wayne.
  *
@@ -260,5 +273,3 @@ public class BTree<Key extends Comparable<Key>, Value>  {
  *  You should have received a copy of the GNU General Public License
  *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
  ******************************************************************************/
-
-

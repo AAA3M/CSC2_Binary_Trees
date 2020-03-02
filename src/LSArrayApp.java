@@ -2,6 +2,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
+
+/**
+ * App which executes The printAllAreas and printAreas methods from LSArrayApp depending on arguments from the user.
+ * @author Alaric McGregor
+ */
 public class LSArrayApp{
 
 
