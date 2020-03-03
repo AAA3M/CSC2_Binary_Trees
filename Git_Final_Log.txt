@@ -1,0 +1,21 @@
+0: commit 23a453609815926a86067cc24dd03a8554f82783
+1: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+2: Date: Tue Mar 3 21:53:17 2020 +0200
+3:
+4: Final Sample Data, (fixed innacurate data input)
+5:
+6: commit 02b5bf688eadee47a4a240c54ce4e35178b8b617
+7: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+8: Date: Tue Mar 3 11:03:52 2020 +0200
+9:
+...
+67: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+68: Date: Sun Feb 23 11:03:15 2020 +0200
+69:
+70: Adding the text documents
+71:
+72: commit c94be0a0e065c395dfc5ce8a0a0602d92986e303
+73: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+74: Date: Sun Feb 23 10:44:05 2020 +0200
+75:
+76: First commit
