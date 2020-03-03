@@ -79,7 +79,7 @@ public class MyBinTree{
     public void printAreas(String stage, String day, String startTime){
         String check = new String (stage + "_"+day+"_"+startTime + " NA");
 
-        if (stage != "" && day != "" && startTime !=""){
+
             BinaryTreeNode<LSData> x = (bt.find(new LSData(check)));
             if (x==null){
                 System.out.println("No zones found for:");
@@ -96,7 +96,7 @@ public class MyBinTree{
                 System.out.println("Number of comparisons to find:");
                 System.out.println(bt.DiscreteCounter);
             }
-        }
+        
         else
         {
             System.out.println("Invalid Arguments");
