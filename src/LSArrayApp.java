@@ -8,7 +8,12 @@ import java.io.FileNotFoundException;
  * @author Alaric McGregor
  */
 public class LSArrayApp{
-
+    /**
+     * main method which will run methods from the LSArray class depending on arguments from the user.
+     * 
+     * @param args list of String arguments including a name of the file.
+     * @throws FileNotFoundException throws an exception if there is no file.
+     */
 
     public static void main(String args[]) throws IOException, FileNotFoundException
     {
