@@ -1,0 +1,21 @@
+0: commit 7d6979aaf38427f1a4d17bb344e4d44163f31009
+1: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+2: Date: Tue Mar 3 10:25:13 2020 +0200
+3:
+4: Finalized JavaDoc
+5:
+6: commit 6ad553d4541f8006d895ccc536ac1258b3f46190
+7: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+8: Date: Mon Mar 2 21:17:22 2020 +0200
+9:
+...
+49: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+50: Date: Sun Feb 23 11:03:15 2020 +0200
+51:
+52: Adding the text documents
+53:
+54: commit c94be0a0e065c395dfc5ce8a0a0602d92986e303
+55: Author: AAA3M <alaric.mcgregoraaa@gmail.com>
+56: Date: Sun Feb 23 10:44:05 2020 +0200
+57:
+58: First commit
