@@ -106,12 +106,13 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         // internal node
         else {
             for (int j = 0; j < x.m; j++) {
+
+                DiscreteCounterS++;
                 if (j+1 == x.m ){
-                    DiscreteCounterS++;
                     return search(children[j].next, key, ht-1);
                 }
+                DiscreteCounterS++;
                 if (less(key, children[j+1].key)){
-                    DiscreteCounterS++;
                     return search(children[j].next, key, ht-1);
                 }
             }

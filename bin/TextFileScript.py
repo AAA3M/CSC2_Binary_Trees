@@ -68,7 +68,7 @@ def executeBTree(DataFile):
 
     path = "/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/DataFiles/"
     file = open(path + DataFile, "r")
-    filew = open("/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/DataFiles/FinalData/" + NewFile + "_BTree_Data.txt", "w")
+    filew = open("/home/alaric/Documents/CSC2/Ass1/CSC2_Binary_Trees/DataFiles/FinalData/" + NewFile + "test_BTree_Data.txt", "w")
     while True:
         line = file.readline().strip()
         if line =='':
@@ -89,9 +89,9 @@ def executeBTree(DataFile):
             
 
 
-for i in range(1, 11):
+for i in range(1):
     if __name__=="__main__":
-        executeBTree("SubSet" + str(i) + ".txt")
+        executeBTree("SubSet" + str(1) + ".txt")
 """
 for i in range(1):
 
